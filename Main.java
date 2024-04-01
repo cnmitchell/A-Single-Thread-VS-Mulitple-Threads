@@ -1,7 +1,3 @@
-//The main benefit of implementing the Runnable interface over extending the Thread class is that it allows room to extend another class if preferred.
-//When you extend the Thread class, you no longer have the option to extend another, as Java does not support multiple inheritances for a class.
-//You are able to implement as many classes as you want, so the Runnable interface is the more favorable option.
-
 import java.util.Scanner;
 
 public class Main {
@@ -37,9 +33,7 @@ public class Main {
         System.out.println("\nMulti-Threaded Prime Generator: ");
         long multiStartTime = System.currentTimeMillis();
 
-        //perfected my multithreading approach because you said my first one
-        //was insufficient and I agree. This approach is so much faster when
-        //entering higher numbers!
+    
         Thread[] myThreads = new Thread[10];
         int rangeSize;
         rangeSize = num/myThreads.length;
@@ -66,9 +60,6 @@ public class Main {
         long multiTotalTime = multiEndTime - multiStartTime;
 
         long difference = Math.abs(multiTotalTime - singleTotalTime);
-
-        //fixed code, so you will not have to scroll to the right :)
-        //even added a text block to my paragraph at the end
         System.out.println("\nThe final report is:\nSingle-Threaded Random Number Generator took " + singleTotalTime +
                 " ms." + "\nMulti-Threaded Random Number Generator took " + multiTotalTime + " ms.\n");
         if(singleTotalTime < multiTotalTime)
